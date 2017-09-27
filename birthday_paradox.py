@@ -11,7 +11,6 @@ on the assumption that each day of the year (except February 29) is equally prob
 for a birthday.
 """
 
-
 from random import randint
 
 def random_birthday(num):
@@ -53,16 +52,16 @@ def runSimulation(num_of_trials,num_of_people):
         birthdays=random_birthday(num_of_people)
         if check_birthday(birthdays):
             count+=1
-    return count/num_of_trials * 100
+    return count*100.0/num_of_trials 
     
 
 if __name__ == '__main__':
     num_of_trials = 1000
     num_of_people = 23
     probability = runSimulation(num_of_trials,num_of_people)
-    print('After %d simulations' % num_of_trials)
-    print('with %d students' % num_of_people)
-    print('there were %d percent probability' % probability)
-    print('that two or more students have the same birthday.')
+    print 'After %d simulations' % num_of_trials
+    print 'with %d students' % num_of_people
+    print 'there were %0.2f percent probability' % probability
+    print 'that two or more students have the same birthday.'
     
     
